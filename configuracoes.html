@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J3G - Configurações</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+    <div class="app-container">
+        <!-- Sidebar / Bottom Nav -->
+        <nav class="main-nav">
+            <a href="index.html" class="nav-brand" style="text-decoration: none;"><i class="fa-solid fa-truck-fast text-orange"></i> <span class="brand-text">J3G Logística</span></a>
+            <a href="inicio.html" class="nav-item"><i class="fa-solid fa-house"></i><span class="nav-text">Início</span></a>
+            <a href="rota.html" class="nav-item"><i class="fa-solid fa-route"></i><span class="nav-text">Rota</span></a>
+            <a href="mapa.html" class="nav-item"><i class="fa-regular fa-map"></i><span class="nav-text">Mapa</span></a>
+            <a href="detalhes.html" class="nav-item"><i class="fa-solid fa-box"></i><span class="nav-text">Entregas</span></a>
+            <a href="configuracoes.html" class="nav-item active"><i class="fa-solid fa-gear"></i><span class="nav-text">Ajustes</span></a>
+        </nav>
+
+        <main class="app-content relative-main">
+            <header class="inner-header">
+                <!-- Seta de voltar removida -->
+                <h2>Configurações</h2>
+                <div></div>
+            </header>
+
+            <div class="content-scroll forms-scroll">
+                
+                <div class="forms-grid" style="grid-template-columns: 1fr;">
+                    <div class="form-column" style="max-width: 600px; margin: 0 auto; width: 100%;">
+                        
+                        <div class="user-profile-header" style="text-align: center; margin-bottom: 40px;">
+                            <div class="user-avatar" style="width: 80px; height: 80px; font-size: 32px; margin: 0 auto 16px;">M</div>
+                            <h3 style="color: var(--primary); font-size: 20px;">Motorista Principal</h3>
+                            <p style="color: var(--text-muted); font-size: 14px;">Caminhão Truck HR-192</p>
+                        </div>
+
+                        <div class="actions-suggestions" style="margin-top: 0;">
+                            <h4 style="margin-bottom: 20px;">Preferências do App</h4>
+                            
+                            <!-- Dark Mode Toggle -->
+                            <div class="toggle-row">
+                                <div class="toggle-info">
+                                    <i class="fa-solid fa-moon"></i>
+                                    <div>
+                                        <strong>Modo Escuro (Dark Mode)</strong>
+                                        <p>Alterar a aparência do sistema</p>
+                                    </div>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-row">
+                                <div class="toggle-info">
+                                    <i class="fa-solid fa-bell"></i>
+                                    <div>
+                                        <strong>Notificações Push</strong>
+                                        <p>Receber alertas de novas rotas</p>
+                                    </div>
+                                </div>
+                                <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                            </div>
+                            
+                            <div class="toggle-row">
+                                <div class="toggle-info">
+                                    <i class="fa-solid fa-location-crosshairs"></i>
+                                    <div>
+                                        <strong>Rastreamento em Segundo Plano</strong>
+                                        <p>Permitir GPS com a tela bloqueada</p>
+                                    </div>
+                                </div>
+                                <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                            </div>
+                        </div>
+
+                        <div class="actions-suggestions">
+                            <h4 style="margin-bottom: 20px; margin-top: 32px;">Conta</h4>
+                            <div class="form-group">
+                                <button class="btn-upload" style="color: var(--text-muted); border-color: var(--border);" onclick="openModal('modalPassword')"><i class="fa-solid fa-key"></i> Alterar Senha</button>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn-upload" style="color: #ef4444; border-color: #fca5a5;" onclick="window.location.href='index.html'"><i class="fa-solid fa-right-from-bracket"></i> Sair do Sistema</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Container para toasts dinâmicos -->
+    <div id="toast-container" class="toast-container"></div>
+    
+    <script src="../js/app.js"></script>
+    <script>
+        // Set initial state of the dark mode toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('darkModeToggle');
+            if(localStorage.getItem('j3g_theme') === 'dark') {
+                toggle.checked = true;
+            }
+        });
+    </script>
+</body>
+</html>

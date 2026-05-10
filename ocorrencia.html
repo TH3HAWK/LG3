@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J3G - Ocorrência</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+    <div class="app-container">
+        <!-- Sidebar / Bottom Nav -->
+        <nav class="main-nav">
+            <a href="index.html" class="nav-brand" style="text-decoration: none;"><i class="fa-solid fa-truck-fast text-orange"></i> <span class="brand-text">J3G Logística</span></a>
+            <a href="inicio.html" class="nav-item"><i class="fa-solid fa-house"></i><span class="nav-text">Início</span></a>
+            <a href="rota.html" class="nav-item"><i class="fa-solid fa-route"></i><span class="nav-text">Rota</span></a>
+            <a href="mapa.html" class="nav-item"><i class="fa-regular fa-map"></i><span class="nav-text">Mapa</span></a>
+            <a href="detalhes.html" class="nav-item active"><i class="fa-solid fa-box"></i><span class="nav-text">Entregas</span></a>
+            <a href="configuracoes.html" class="nav-item"><i class="fa-solid fa-gear"></i><span class="nav-text">Ajustes</span></a>
+        </nav>
+
+        <main class="app-content relative-main">
+            <header class="inner-header">
+                <a href="detalhes.html" class="icon-link"><i class="fa-solid fa-arrow-left"></i></a>
+                <h2>Ocorrência / Remanejamento</h2>
+                <i class="fa-solid fa-ellipsis-vertical" style="cursor:pointer;" onclick="openModal('modalOpcoesDetalhes')"></i>
+            </header>
+
+            <div class="content-scroll forms-scroll">
+                
+                <div class="forms-grid">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label>Tipo de ocorrência</label>
+                            <select id="tipoOcorrencia" class="select-input" style="display: block;">
+                                <option value="" disabled selected>Selecione o tipo</option>
+                                <option value="Problema no veículo">Problema no veículo</option>
+                                <option value="Atraso">Atraso</option>
+                                <option value="Problema com a carga">Problema com a carga</option>
+                                <option value="Condições climáticas">Condições climáticas</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Motivo</label>
+                            <select id="motivoOcorrencia" class="select-input" style="display: block;">
+                                <option value="" disabled selected>Selecione o motivo</option>
+                                <option value="Caminhão estragou">Caminhão estragou</option>
+                                <option value="Pneu furou">Pneu furou</option>
+                                <option value="Engarrafamento">Engarrafamento</option>
+                                <option value="Chuva forte">Chuva forte</option>
+                                <option value="Acidente na via">Acidente na via</option>
+                                <option value="Endereço não localizado">Endereço não localizado</option>
+                                <option value="Cliente ausente">Cliente ausente</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Observações</label>
+                            <textarea id="obsOcorrencia" placeholder="Descreva os detalhes da ocorrência..."></textarea>
+                            <div class="char-count">0/300</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Foto (opcional)</label>
+                            <button class="btn-upload" onclick="triggerCamera()"><i class="fa-solid fa-camera"></i> Adicionar foto</button>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <div class="actions-suggestions">
+                            <h4>Ações sugeridas</h4>
+                            <div class="toggle-row">
+                                <div class="toggle-info">
+                                    <i class="fa-solid fa-boxes-stacked"></i>
+                                    <div>
+                                        <strong>Remanejar carga</strong>
+                                        <p>Redirecionar para outra ordem/ponto</p>
+                                    </div>
+                                </div>
+                                <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                            </div>
+                            <div class="toggle-row">
+                                <div class="toggle-info">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                    <div>
+                                        <strong>Priorizar próxima entrega</strong>
+                                        <p>Aumentar prioridade no roteiro</p>
+                                    </div>
+                                </div>
+                                <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                            </div>
+                            <div class="toggle-row">
+                                <div class="toggle-info">
+                                    <i class="fa-solid fa-arrow-rotate-left"></i>
+                                    <div>
+                                        <strong>Retorno ao ponto de carga</strong>
+                                        <p>Voltar para origem para instruções</p>
+                                    </div>
+                                </div>
+                                <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary-large" style="margin-top: 16px;" onclick="registrarOcorrencia()"><i class="fa-solid fa-triangle-exclamation"></i> Registrar ocorrência</button>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Container para toasts dinâmicos -->
+    <div id="toast-container" class="toast-container"></div>
+    
+    <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J3G - Rota do Dia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+    <div class="app-container">
+        <!-- Sidebar / Bottom Nav -->
+        <nav class="main-nav">
+            <a href="index.html" class="nav-brand" style="text-decoration: none;"><i class="fa-solid fa-truck-fast text-orange"></i> <span class="brand-text">J3G Logística</span></a>
+            <a href="inicio.html" class="nav-item"><i class="fa-solid fa-house"></i><span class="nav-text">Início</span></a>
+            <a href="rota.html" class="nav-item active"><i class="fa-solid fa-route"></i><span class="nav-text">Rota</span></a>
+            <a href="mapa.html" class="nav-item"><i class="fa-regular fa-map"></i><span class="nav-text">Mapa</span></a>
+            <a href="detalhes.html" class="nav-item"><i class="fa-solid fa-box"></i><span class="nav-text">Entregas</span></a>
+            <a href="configuracoes.html" class="nav-item"><i class="fa-solid fa-gear"></i><span class="nav-text">Ajustes</span></a>
+        </nav>
+
+        <main class="app-content relative-main">
+            <header class="inner-header">
+                <!-- Seta de voltar removida -->
+                <h2>Rota do Dia</h2>
+                <i class="fa-solid fa-calendar-days" style="cursor:pointer;"></i>
+            </header>
+
+            <div class="route-banner">
+                <div class="route-title">Rota 1274 • 20/05</div>
+                <div class="route-metrics">
+                    <div><i class="fa-solid fa-location-dot"></i> <strong>12</strong> paradas</div>
+                    <div><i class="fa-solid fa-road"></i> <strong>86 km</strong> distância</div>
+                    <div><i class="fa-regular fa-clock"></i> <strong>08:00</strong> início</div>
+                </div>
+            </div>
+
+            <div class="content-scroll route-list-scroll">
+                <div class="route-timeline responsive-timeline">
+                    <a href="detalhes.html" class="timeline-item no-underline">
+                        <div class="tl-num bg-orange">1</div>
+                        <div class="tl-content">
+                            <div class="tl-top">
+                                <h4>Metalúrgica Alfa</h4>
+                                <span class="tl-time">08:00</span>
+                            </div>
+                            <p>Av. das Indústrias, 1200<br>Distrito Industrial, SP</p>
+                            <span class="badge badge-orange">PRIORITÁRIA</span>
+                        </div>
+                    </a>
+                    <div class="timeline-item">
+                        <div class="tl-num bg-grey">2</div>
+                        <div class="tl-content">
+                            <div class="tl-top">
+                                <h4>Construtora Brasil</h4>
+                                <span class="tl-time">10:30</span>
+                            </div>
+                            <p>Rua do Gross, 450<br>Vila Industrial, SP</p>
+                            <span class="badge badge-grey">NORMAL</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-num bg-grey">3</div>
+                        <div class="tl-content">
+                            <div class="tl-top">
+                                <h4>Indústria Sul</h4>
+                                <span class="tl-time">13:45</span>
+                            </div>
+                            <p>Av. Sul, 2100<br>Jd. América, SP</p>
+                            <span class="badge badge-grey">NORMAL</span>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="tl-num bg-orange">4</div>
+                        <div class="tl-content">
+                            <div class="tl-top">
+                                <h4>Comercial Verdes</h4>
+                                <span class="tl-time">15:30</span>
+                            </div>
+                            <p>Rua S. Flores, 88<br>Centro, SP</p>
+                            <span class="badge badge-orange">PRIORITÁRIA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fixed-bottom-action">
+                <button class="btn-primary-large" onclick="window.location.href='mapa.html'"><i class="fa-solid fa-play"></i> Iniciar rota</button>
+            </div>
+        </main>
+    </div>
+    <script src="../js/app.js"></script>
+</body>
+</html>

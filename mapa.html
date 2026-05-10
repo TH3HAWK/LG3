@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J3G - Mapa e Rastreamento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+    <div class="app-container">
+        <!-- Sidebar / Bottom Nav -->
+        <nav class="main-nav">
+            <a href="index.html" class="nav-brand" style="text-decoration: none;"><i class="fa-solid fa-truck-fast text-orange"></i> <span class="brand-text">J3G Logística</span></a>
+            <a href="inicio.html" class="nav-item"><i class="fa-solid fa-house"></i><span class="nav-text">Início</span></a>
+            <a href="rota.html" class="nav-item"><i class="fa-solid fa-route"></i><span class="nav-text">Rota</span></a>
+            <a href="mapa.html" class="nav-item active"><i class="fa-regular fa-map"></i><span class="nav-text">Mapa</span></a>
+            <a href="detalhes.html" class="nav-item"><i class="fa-solid fa-box"></i><span class="nav-text">Entregas</span></a>
+            <a href="configuracoes.html" class="nav-item"><i class="fa-solid fa-gear"></i><span class="nav-text">Ajustes</span></a>
+        </nav>
+
+        <main class="app-content map-view-main">
+            <header class="inner-header">
+                <!-- Seta de voltar removida -->
+                <h2>Mapa e Rastreamento</h2>
+                <!-- Filtros removidos -->
+                <div></div>
+            </header>
+            
+            <div class="map-top-card">
+                <div class="map-status" id="map-route-status">Rota 1274 • Em andamento</div>
+                <div class="map-next">
+                    <div>
+                        <small>Próxima parada</small>
+                        <strong id="map-next-stop">Metalúrgica Alfa</strong>
+                    </div>
+                    <div class="eta-box">
+                        <small>ETA</small>
+                        <strong id="map-eta">15 min • 08:00</strong>
+                    </div>
+                </div>
+                <div class="progress-wrapper">
+                    <div class="progress-labels">
+                        <span>Progresso da rota</span>
+                        <span id="map-progress-text">3 de 12 paradas</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="map-progress-bar" style="width: 25%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mock-map">
+                <div class="map-line"></div>
+                <div class="map-dot dot-1">1</div>
+                <div class="map-dot dot-2">2</div>
+                <div class="map-dot dot-3">3</div>
+                <div class="map-dot dot-4">4</div>
+                <div class="map-dot dot-5">5</div>
+                <div class="current-location-marker">
+                    <i class="fa-solid fa-truck"></i>
+                    <div class="tooltip">Você está aqui<br><small>Av. das Indústrias, 980</small></div>
+                </div>
+            </div>
+
+            <div class="map-floating-actions">
+                <button class="btn-outline" onclick="mockAction('Iniciando navegação por GPS em aplicativo terceiro...')"><i class="fa-solid fa-location-arrow"></i> Navegar</button>
+                <button class="btn-primary-small" onclick="window.location.href='detalhes.html'"><i class="fa-solid fa-rotate" style="margin-right:8px;"></i> Atualizar status</button>
+            </div>
+        </main>
+    </div>
+    <script src="../js/app.js"></script>
+</body>
+</html>

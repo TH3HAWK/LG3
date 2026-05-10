@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J3G - Detalhe da Entrega</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+    <div class="app-container">
+        <!-- Sidebar / Bottom Nav -->
+        <nav class="main-nav">
+            <a href="index.html" class="nav-brand" style="text-decoration: none;"><i class="fa-solid fa-truck-fast text-orange"></i> <span class="brand-text">J3G Logística</span></a>
+            <a href="inicio.html" class="nav-item"><i class="fa-solid fa-house"></i><span class="nav-text">Início</span></a>
+            <a href="rota.html" class="nav-item"><i class="fa-solid fa-route"></i><span class="nav-text">Rota</span></a>
+            <a href="mapa.html" class="nav-item"><i class="fa-regular fa-map"></i><span class="nav-text">Mapa</span></a>
+            <a href="detalhes.html" class="nav-item active"><i class="fa-solid fa-box"></i><span class="nav-text">Entregas</span></a>
+            <a href="configuracoes.html" class="nav-item"><i class="fa-solid fa-gear"></i><span class="nav-text">Ajustes</span></a>
+        </nav>
+
+        <main class="app-content relative-main">
+            <header class="inner-header">
+                <!-- Seta de voltar removida -->
+                <h2>Detalhe da Entrega</h2>
+                <i class="fa-solid fa-ellipsis-vertical" style="cursor:pointer;" onclick="openModal('modalOpcoesDetalhes')"></i>
+            </header>
+
+            <div class="content-scroll delivery-details">
+                <div class="delivery-header">
+                    <div class="dh-top">
+                        <span class="num-circle bg-dark-blue">1</span>
+                        <span class="badge badge-orange">PRIORITÁRIA</span>
+                    </div>
+                    <h3>Metalúrgica Alfa</h3>
+                    <p class="cnpj">CNPJ 12.345.678/0001-90</p>
+                </div>
+
+                <!-- Grid wrapper for responsive desktop layout -->
+                <div class="details-grid">
+                    <div class="details-column">
+                        <div class="address-card">
+                            <div class="addr-text">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    Av. das Indústrias, 1200<br>Distrito Industrial, SP
+                                    <a href="mapa.html">Ver no mapa</a>
+                                </div>
+                            </div>
+                            <button class="icon-btn-round" onclick="mockAction('Iniciando chamada para o cliente...')"><i class="fa-solid fa-phone"></i></button>
+                        </div>
+
+                        <div class="contact-section">
+                            <h4>Contato</h4>
+                            <div class="contact-card">
+                                <i class="fa-regular fa-user"></i>
+                                <div>
+                                    <strong>João Silva</strong>
+                                    <p>(11) 99999-0000</p>
+                                </div>
+                                <button class="icon-btn-round outline" onclick="openClientWhatsApp()"><i class="fa-brands fa-whatsapp"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="nfe-card">
+                            <i class="fa-solid fa-file-invoice"></i>
+                            <div>
+                                <strong>Nota Fiscal</strong>
+                                <p>NF-e 000.123.456 • <a href="#" onclick="viewPDF('NF-e 000.123.456')">Ver PDF</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-column">
+                        <div class="materials-section">
+                            <h4>Materiais (3 itens)</h4>
+                            <ul class="mat-list">
+                                <li>
+                                    <span>Vergalhão CA-50 3/8</span>
+                                    <strong>2.000 kg</strong>
+                                </li>
+                                <li>
+                                    <span>Cimento CPII 50kg</span>
+                                    <strong>100 sacos</strong>
+                                </li>
+                                <li>
+                                    <span>Tela Soldada Q-138</span>
+                                    <strong>20 und.</strong>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="status-selector">
+                            <h4>Status da entrega</h4>
+                            <div class="select-box" onclick="openModal('modalStatus')">
+                                Pendente <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <div id="ocorrenciaRegistradaSection" class="contact-section" style="display: none; margin-top: 24px;">
+                            <h4>Ocorrência Registrada</h4>
+                            <div class="contact-card" style="border-color: var(--orange); background: var(--orange-light);">
+                                <i class="fa-solid fa-triangle-exclamation" style="color: var(--orange); background: transparent; width: auto; font-size: 24px;"></i>
+                                <div>
+                                    <strong id="ocTipo" style="color: var(--orange);"></strong>
+                                    <p id="ocMotivo" style="color: var(--orange); opacity: 0.8;"></p>
+                                    <p id="ocObs" style="font-size: 12px; margin-top: 4px;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-actions">
+                    <button class="btn-primary-large" onclick="concluirEntrega()"><i class="fa-solid fa-check"></i> Entrega</button>
+                    <a href="ocorrencia.html" class="btn-outline-large warning-text no-underline" style="display:block;"><i class="fa-solid fa-triangle-exclamation"></i> Registrar ocorrência</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/app.js"></script>
+</body>
+</html>
